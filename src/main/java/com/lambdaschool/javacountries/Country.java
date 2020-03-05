@@ -1,7 +1,11 @@
 package com.lambdaschool.javacountries;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class Country
 {
+    private static final AtomicLong counter = new AtomicLong();
+    private long id;
     private String cName;
     private long population;
     private long landMass;
@@ -9,10 +13,29 @@ public class Country
 
     public Country(String cName, long population, long landMass, int medianAge)
     {
+        this.id = counter.incrementAndGet();
         this.cName = cName;
         this.population = population;
         this.landMass = landMass;
         this.medianAge = medianAge;
+    }
+
+    public Country(Country toClone)
+    {
+        this.cName = toClone.getcName();
+        this.population = toClone.getPopulation();
+        this.landMass = toClone.getLandMass();
+        this.medianAge = toClone.getMedianAge();
+    }
+
+    public long getId()
+    {
+        return id;
+    }
+
+    public void setId(long id)
+    {
+        this.id = id;
     }
 
     public String getcName()
@@ -58,6 +81,6 @@ public class Country
     @Override
     public String toString()
     {
-        return "Country{" + "cName='" + cName + '\'' + ", population=" + population + ", landMass=" + landMass + ", medianAge=" + medianAge + '}';
+        return "Country{" + "id=" + id + ", cName='" + cName + '\'' + ", population=" + population + ", landMass=" + landMass + ", medianAge=" + medianAge + '}';
     }
 }
