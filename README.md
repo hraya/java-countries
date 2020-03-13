@@ -2644,9 +2644,9 @@ The following URLs should return the requested data given the parameters
 * [x] /population/min - return the country with the smallest population
 * [x] /population/max - return the country with the largest population
 
-* [ ] /age/age/{age} - return the countries that have a median age equal to or greater than the given age
-* [ ] /age/min - return the country with the smallest median age
-* [ ] /age/max - return the country the the greatest median age  
+* [x] /age/age/{age} - return the countries that have a median age equal to or greater than the given age
+* [x] /age/min - return the country with the smallest median age
+* [x] /age/max - return the country the the greatest median age  
 
 ### Stretch Goal
 
